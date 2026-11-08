@@ -21,7 +21,9 @@ public class AppDbContext : DbContext
             entity.HasKey(p => p.Id);
             entity.Property(p => p.Titel).IsRequired().HasMaxLength(50);
             entity.Property(p => p.Categorie).HasMaxLength(25);
+            entity.Property(p => p.Categorie).IsRequired();
             entity.Property(p => p.GitHubUrl).HasMaxLength(2048);
+            entity.Property(p => p.GitHubUrl).IsRequired();
             entity.Property(p => p.Beschrijving).HasColumnType("nvarchar(max)"); 
         });
 
