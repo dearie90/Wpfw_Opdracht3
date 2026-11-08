@@ -40,8 +40,16 @@ public class BlogpostsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] BlogpostDto blogpostDto)
     {
-        var createdBlogpost = await _blogpostService.CreateBlogpostAsync(blogpostDto);
-        return Ok(createdBlogpost);
+        try
+        {
+            var createdBlogpost = await _blogpostService.CreateBlogpostAsync(blogpostDto);
+            return Ok(createdBlogpost);
+        }
+        catch (InvalidOperationException ex)
+        {
+            // Vangt blogpost creation error (gecontroleerde error) op en retourneert een BadRequest met de foutmelding ipv error 500
+            return BadRequest(ex.Message);
+        }
     }
 
     // UPDATE bestaande blogpost

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EfCoreWebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51720ebf32a527efb14e88f77a5f93eb452eb42f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+965f1d4a88e6fdec5de67e06a8ffc0b464ddf5b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("EfCoreWebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EfCoreWebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -41,8 +41,16 @@ public class ProjectsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] ProjectDto projectDto)
     {
-        var createdProject = await _projectService.CreateProjectAsync(projectDto);
-        return Ok(createdProject);
+        try
+        {
+            var createdProject = await _projectService.CreateProjectAsync(projectDto);
+            return Ok(createdProject);
+        }
+        catch (InvalidOperationException ex)
+        {
+            // Vangt de unieke titelcheck-fout op en stuurt een nette 400 Bad Request naar de frontend
+            return BadRequest(ex.Message);
+        }
     }
 
     // UPDATE bestaand project
